@@ -8,7 +8,7 @@ const sequelize = new Sequelize(
   {
     host: process.env.DB_HOST || "localhost",
     dialect: "postgres",
-    dialectModule: "pg",
+    dialectModule: require("pg"),
   }
 );
 
