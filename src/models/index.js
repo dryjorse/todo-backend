@@ -1,5 +1,6 @@
 const { Sequelize } = require("sequelize");
 const TodoModel = require("./todo");
+require("dotenv").config();
 
 const sequelize = new Sequelize(
   process.env.POSTGRES_URL,
@@ -14,7 +15,7 @@ const sequelize = new Sequelize(
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false, // <-- вот этот флаг отключает проверку сертификата
+        rejectUnauthorized: false,
       },
     },
     // dialectOptions: {

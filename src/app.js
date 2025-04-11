@@ -1,9 +1,10 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 // src/app.js
 const express = require("express");
 const bodyParser = require("body-parser");
 const { sequelize } = require("./models");
 const todoRoutes = require("./routes/todo");
-require("dotenv").config();
 
 const app = express();
 
