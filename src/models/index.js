@@ -11,6 +11,12 @@ const sequelize = new Sequelize(
     // host: process.env.POSTGRES_HOST || "localhost",
     dialect: "postgres",
     dialectModule: require("pg"),
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false, // <-- вот этот флаг отключает проверку сертификата
+      },
+    },
     // dialectOptions: {
     //   ssl: {
     //     require: true,
