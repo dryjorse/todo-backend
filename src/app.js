@@ -11,6 +11,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use("/api/todos/", todoRoutes);
 
+app.use("/api/test", async (req, res) => {
+  res.status(200).json({ message: "Работааееет" });
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, async () => {
